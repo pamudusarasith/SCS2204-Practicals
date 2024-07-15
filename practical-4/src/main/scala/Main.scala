@@ -1,12 +1,12 @@
 @main def main(): Unit =
-  println("========= Question 1 =========");
-  question1();
+  // println("========= Question 1 =========");
+  // question1();
 
   println("\n\n========= Question 2 =========");
   question2();
   
-  println("\n\n========= Question 3 =========");
-  question3();
+  // println("\n\n========= Question 3 =========");
+  // question3();
 
 // ====================== question 1 ======================
 
@@ -18,19 +18,22 @@ def question1(): Unit = {
   displayInventory();
   println();
 
-  restockItem("Orange", 4);
-  restockItem("Pears", 10);
-
-  println("\n==== After restocking ====\n");
+  sellItem("Apple", 20);
   displayInventory();
-  println();
 
-  sellItem("Banana", 8);
-  sellItem("Apple", 30);
-  sellItem("Pears", 20);
+  // restockItem("Orange", 4);
+  // restockItem("Pears", 10);
 
-  println("\n==== After selling ====\n");
-  displayInventory();
+  // println("\n==== After restocking ====\n");
+  // displayInventory();
+  // println();
+
+  // sellItem("Banana", 8);
+  // sellItem("Apple", 30);
+  // sellItem("Pears", 20);
+
+  // println("\n==== After selling ====\n");
+  // displayInventory();
 }
 
 def printItems(items: Array[String], quantity: Array[Int]): Unit = {
