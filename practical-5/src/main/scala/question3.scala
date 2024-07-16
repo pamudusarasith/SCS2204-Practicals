@@ -1,6 +1,8 @@
 def question3() = {
   println("========== Question 3 ==========");
-  println(fibSequence(10));
+  print("Enter n: ");
+  val n = scala.io.StdIn.readInt();
+  println(fibSequence(n));
 }
 
 def fib(n: Int): Int = n match {
