@@ -22,31 +22,29 @@ def question1() = {
 }
 
 def caesarEncrypt(text: String, shift: Int): String = {
-  val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  if (shift < 0 || shift >= alphabet.size) {
+  if (shift < 0 || shift >= 26) {
     throw new Exception("Shift value must be between 0 and 25")
   }
   text.map { char =>
-    val index = alphabet.indexOf(char.toUpper)
-    if (index == -1) {
-      char
+    val base = if (char.isUpper) 'A' else 'a'
+    if (char.isUpper || char.isLower) {
+      (base + ((char - base) + shift) % 26).toChar
     } else {
-      alphabet((index + shift) % alphabet.size)
+      char
     }
   }
 }
 
 def caesarDecrypt(text: String, shift: Int): String = {
-  val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  if (shift < 0 || shift >= alphabet.size) {
+  if (shift < 0 || shift >= 26) {
     throw new Exception("Shift value must be between 0 and 25")
   }
   text.map { char =>
-    val index = alphabet.indexOf(char.toUpper)
-    if (index == -1) {
-      char
+    val base = if (char.isUpper) 'A' else 'a'
+    if (char.isUpper || char.isLower) {
+      (base + ((char - base) - shift + 26) % 26).toChar
     } else {
-      alphabet((index - shift + alphabet.size) % alphabet.size)
+      char
     }
   }
 }
