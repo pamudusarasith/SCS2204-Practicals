@@ -1,6 +1,6 @@
 def question1() = {
     print("Enter the deposit amount: ")
-    val num = scala.io.StdIn.readInt()
+    val num = scala.io.StdIn.readDouble()
     println("Interest: " + calculateInterest(num))
 }
 
